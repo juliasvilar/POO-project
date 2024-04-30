@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Favoritos {
-    private List<Filme> filmesFavoritos;
-    private List<Livro> livrosFavoritos;
+    public List<Filme> filmesFavoritos;
+    public List<Livro> livrosFavoritos;
 
     public Favoritos() {
         this.filmesFavoritos = new ArrayList<>();
@@ -17,6 +17,15 @@ class Favoritos {
     public void adicionarLivro(Livro livro) {
         livrosFavoritos.add(livro);
     }
+    
+    public List<Filme> getFilmesFavoritos() {
+        return filmesFavoritos;
+    }
+    
+    public List<Livro> getLivrosFavoritos() {
+        return livrosFavoritos;
+    }
+
 
     public void exibirFilmesFavoritos() {
         System.out.println("Filmes Favoritos:");
