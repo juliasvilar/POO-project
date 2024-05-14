@@ -1,4 +1,10 @@
-class Livro {
+import java.util.ArrayList;
+import java.util.List;
+
+class Livro {    
+    
+    List<Livro> listaDeLivros = new ArrayList<>();
+    
     private String nome;
     private double nota;
 
@@ -21,5 +27,9 @@ class Livro {
 
     public void setNota(double nota) {
         this.nota = nota;
+    }
+    
+    public List<Livro> getLivros() {
+        return listaDeLivros;
     }
 }
