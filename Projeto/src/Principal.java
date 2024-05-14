@@ -22,8 +22,7 @@ public class Principal {
                     Filme filme = new Filme();
                     System.out.print("Digite o nome do filme: ");
                     String nomeFilme = scanner.nextLine();
-                    
-                    
+
                     boolean filmeExistente = false;
                     for (Filme f : listaDeFilmes) {
                         if (f.getNome().equalsIgnoreCase(nomeFilme)) {
@@ -36,7 +35,7 @@ public class Principal {
                         System.out.println("Este filme ja esta na lista!");
                     } else {
                         filme.setNome(nomeFilme);
-                        
+
                         System.out.print("Digite a nota para o filme '" + filme.getNome() + "': ");
                         double notaFilme = scanner.nextDouble();
                         filme.setNota(notaFilme);
@@ -55,15 +54,13 @@ public class Principal {
                         }
                     }
                     break;
-                    
-                    
-
+                                   
                 case 2: // lista filmes assistidos
                     System.out.println("Lista de filmes:");
                     for (Filme f : listaDeFilmes) {
                         f.exibeFichaTecnica();
                     }
-                    break;
+                    break;                                          
                 
                 case 3: // exibe filmes favoritos
                     if (favoritos.getFilmesFavoritos().isEmpty()) {
