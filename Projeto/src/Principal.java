@@ -17,7 +17,7 @@ public class Principal {
             resposta = scanner.nextInt();
 
             switch (resposta) {
-                case 1: // adiciona filme na lista
+                case 1: 
                     scanner.nextLine(); 
                     Filme filme = new Filme();
                     System.out.print("Digite o nome do filme: ");
@@ -55,27 +55,22 @@ public class Principal {
                     }
                     break;
                                    
-                case 2: // lista filmes assistidos
+                case 2: 
                     System.out.println("Lista de filmes:");
                     for (Filme f : listaDeFilmes) {
                         f.exibeFichaTecnica();
                     }
                     break;                                          
                 
-                case 3: // exibe filmes favoritos
+                case 3: 
                     if (favoritos.getFilmesFavoritos().isEmpty()) {
                         System.out.println("Lista vazia!");
                     } else {
                         favoritos.exibirFilmesFavoritos();
                     }
                     break; 
-
-                    
-                case 4: // adicionar filmes favoritos
-                    System.out.println("Em andamento...");
-                    break;
-                                        
-                case 5: // adiciona livro na lista
+                     
+                case 4: 
                     scanner.nextLine(); 
                     Livro livro = new Livro();
                     System.out.print("Digite o nome do livro: ");
@@ -114,44 +109,20 @@ public class Principal {
                     break;
                 
                     
-                case 6: // exibe livros lidos
+                case 5: 
                     System.out.println("Lista de livros:");
                     for (Livro l : listaDeLivros) {
                         l.exibeFichaTecnica();
                     }
                     break;
                     
-                case 7: // exibe livros favoritos
+                case 6: 
                     if (favoritos.getLivrosFavoritos().isEmpty()) {
                         System.out.println("Lista vazia!");
                     } else {
                         favoritos.exibirLivrosFavoritos();
                     }
                     break; 
-                
-                case 8: // adicionar livro aos favoritos
-                    System.out.println("Em andamento...");
-                    break;
-                    
-                /*case 4  e 8:
-                    System.out.println("Deseja adicionar um filme ou um livro na lista de favoritos? ");
-                    System.out.println("1- Filme\n2-Livro");
-                    fav = scanner.nextInt();
-                    while(fav != 1 && fav != 2){
-                        System.out.println("Resposta inválida! Tente novamente: \n");
-                        System.out.println("1- Filme\n2-Livro");
-                        fav = scanner.nextInt();
-                    }
-                    if(fav == 1){//fazer opc para adicionar filmes ja assistidos nessa lista
-                        System.out.println("Que filme você deseja adicionar aos favoritos?");
-                        for (Filme f : listaDeFilmes) {
-                            f.exibeFichaTecnica();
-                        }
-                    }
-                */ //tem que implementar verificando se ele ja esta na lista de filmes
-                   //e se ele ja esta nos favoritos, depois vou parar pra fazer pq tem 
-                   //que fazer algumas buscas nas listas
-
                 case 0: 
                     System.out.println("Fechando programa...");
                     break;
@@ -172,12 +143,10 @@ public class Principal {
         System.out.println("1. Adicionar filme na lista"); // OK
         System.out.println("2. Mostrar filmes na lista de filmes"); // fazer caso esteja vazia
         System.out.println("3. Mostrar filmes favoritos"); // OK
-        System.out.println("4. Adicionar filme aos favoritos (em construcao)\n"); // em andamento... (tirar opcao de colocar aos favs de adicionar e se o filme estiver repetido nos favs)
         System.out.println("LIVROS");
-        System.out.println("5. Adicionar livro na lista"); // OK
-        System.out.println("6. Mostrar livros na lista de livros"); // fazer caso esteja vazia
-        System.out.println("7. Mostrar livros favoritos"); // OK
-        System.out.println("8. Adicionar livro aos favoritos (em construcao)\n"); // em andamento... (tirar opcao de colocar aos favs de adicionar e se o livro estiver repetido nos favs)
+        System.out.println("4. Adicionar livro na lista"); // OK
+        System.out.println("5. Mostrar livros na lista de livros"); // fazer caso esteja vazia
+        System.out.println("6. Mostrar livros favoritos"); // OK
         System.out.println("0. Sair");
         System.out.println("================");
     }
