@@ -25,8 +25,8 @@ class Favoritos {
     public List<Livro> getLivrosFavoritos() {
         return livrosFavoritos;
     }
-
-
+    
+    
     public void exibirFilmesFavoritos() {
         System.out.println("Filmes Favoritos:");
         for (Filme filme : filmesFavoritos) {
