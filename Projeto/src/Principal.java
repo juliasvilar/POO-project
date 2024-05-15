@@ -140,13 +140,13 @@ public class Principal {
     public static void exibirMenu() {
         System.out.println("===== MENU =====");
         System.out.println("FILMES");
-        System.out.println("1. Adicionar filme na lista"); // OK
-        System.out.println("2. Mostrar filmes na lista de filmes"); // fazer caso esteja vazia
-        System.out.println("3. Mostrar filmes favoritos"); // OK
+        System.out.println("1. Adicionar filme na lista"); 
+        System.out.println("2. Mostrar filmes na lista de filmes"); 
+        System.out.println("3. Mostrar filmes favoritos"); 
         System.out.println("LIVROS");
-        System.out.println("4. Adicionar livro na lista"); // OK
-        System.out.println("5. Mostrar livros na lista de livros"); // fazer caso esteja vazia
-        System.out.println("6. Mostrar livros favoritos"); // OK
+        System.out.println("4. Adicionar livro na lista");
+        System.out.println("5. Mostrar livros na lista de livros"); 
+        System.out.println("6. Mostrar livros favoritos"); 
         System.out.println("0. Sair");
         System.out.println("================");
     }
