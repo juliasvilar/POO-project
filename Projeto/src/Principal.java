@@ -3,20 +3,31 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         List<Filme> listaDeFilmes = new ArrayList<>();
         List<Livro> listaDeLivros = new ArrayList<>();
         Favoritos favoritos = new Favoritos();
         int resposta;
         
+        String senha_salva = "123456";
+
         System.out.println("===== LOGIN =====");
         System.out.println("Email ou nome de usuário: ");
         String emailOuNome = scanner.nextLine();
         System.out.println("Senha: ");
         String senha = scanner.nextLine();
+        
+        while(!senha.equals(senha_salva)){
+            System.out.println("Senha incorreta! Tente novamente.");
+            senha = scanner.nextLine();
+        }
+
+        
         System.out.printf("\nBem vindo(a) de volta, %s!\n\n",emailOuNome);
         
+        Thread.sleep(1500);
+
         do {
             exibirMenu();
             System.out.print("Informe a opcao desejada: ");
