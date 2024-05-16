@@ -9,50 +9,22 @@ public class Principal {
         List<Livro> listaDeLivros = new ArrayList<>();
         Favoritos favoritos = new Favoritos();
         int resposta;
-        int fav;
-
+        
+        System.out.println("===== LOGIN =====");
+        System.out.println("Email ou nome de usuário: ");
+        String emailOuNome = scanner.nextLine();
+        System.out.println("Senha: ");
+        String senha = scanner.nextLine();
+        System.out.printf("\nBem vindo(a) de volta, %s!\n\n",emailOuNome);
+        
         do {
             exibirMenu();
             System.out.print("Informe a opcao desejada: ");
             resposta = scanner.nextInt();
 
             switch (resposta) {
-                case 1: 
-                    scanner.nextLine(); 
-                    Filme filme = new Filme();
-                    System.out.print("Digite o nome do filme: ");
-                    String nomeFilme = scanner.nextLine();
-
-                    boolean filmeExistente = false;
-                    for (Filme f : listaDeFilmes) {
-                        if (f.getNome().equalsIgnoreCase(nomeFilme)) {
-                            filmeExistente = true;
-                            break;
-                        }
-                    }
-
-                    if (filmeExistente) {
-                        System.out.println("Este filme ja esta na lista!");
-                    } else {
-                        filme.setNome(nomeFilme);
-
-                        System.out.print("Digite a nota para o filme '" + filme.getNome() + "': ");
-                        double notaFilme = scanner.nextDouble();
-                        filme.setNota(notaFilme);
-
-                        listaDeFilmes.add(filme);
-                        System.out.println("Deseja adicionar o filme na lista dos favoritos? ");
-                        System.out.println("1 - SIM\n2 - NAO: ");
-                        fav = scanner.nextInt();
-                        while(fav != 1 && fav != 2){
-                            System.out.println("Resposta inválida!\n");
-                        }
-                        if(fav == 1){
-                            favoritos.adicionarFilme(filme);
-                            System.out.println("Filme adicionado aos favoritos!");
-
-                        }
-                    }
+                case 1:                   
+                    Filme.adicionarFilme(scanner, listaDeFilmes, favoritos);                   
                     break;
                                    
                 case 2: 
@@ -71,44 +43,8 @@ public class Principal {
                     break; 
                      
                 case 4: 
-                    scanner.nextLine(); 
-                    Livro livro = new Livro();
-                    System.out.print("Digite o nome do livro: ");
-                    String nomeLivro = scanner.nextLine();
-                    
-                    boolean livroExistente = false;
-                    for (Livro f : listaDeLivros) {
-                        if (f.getNome().equalsIgnoreCase(nomeLivro)) {
-                            livroExistente = true;
-                            break;
-                        }
-                    }
-
-                    if (livroExistente) {
-                        System.out.println("Este livro ja esta na lista!");
-                    } else {
-                        livro.setNome(nomeLivro);
-
-                        System.out.print("Digite a nota para o livro '" + livro.getNome() + "': ");
-                        double notaLivro = scanner.nextDouble();
-                        livro.setNota(notaLivro);
-
-                        listaDeLivros.add(livro);
-                        System.out.println("Deseja adicionar livro na lista de favoritos? ");
-                        System.out.println("1 - SIM\n2 - NAO: ");
-                        fav = scanner.nextInt();
-                        while(fav != 1 && fav != 2){
-                            System.out.println("Resposta inválida!\n");
-                        }
-                        if(fav == 1){
-                            favoritos.adicionarLivro(livro);
-                            System.out.println("Livro adicionado aos favoritos!");
-
-                        }
-                    }
-                    break;
-                
-                    
+                    Livro.adicionarLivro(scanner, listaDeLivros, favoritos);
+                    break;                                   
                 case 5: 
                     System.out.println("Lista de livros:");
                     for (Livro l : listaDeLivros) {
@@ -138,7 +74,7 @@ public class Principal {
     }
 
     public static void exibirMenu() {
-        System.out.println("===== MENU =====");
+        System.out.println("\n===== MENU =====");
         System.out.println("FILMES");
         System.out.println("1. Adicionar filme na lista"); 
         System.out.println("2. Mostrar filmes na lista de filmes"); 
@@ -149,5 +85,5 @@ public class Principal {
         System.out.println("6. Mostrar livros favoritos"); 
         System.out.println("0. Sair");
         System.out.println("================");
-    }
+    }                  
 }
