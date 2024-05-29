@@ -5,16 +5,31 @@ class Interface {
     
     public void login(){
         Scanner scanner = new Scanner(System.in);
-        String senha_salva = "123456";
-
-        System.out.println("===== LOGIN =====");
+       
+        System.out.println("===== CADASTRO =====");
         System.out.println("Email ou nome de usuário: ");
         String emailOuNome = scanner.nextLine();
-        System.out.println("Senha: ");
+        System.out.println("Crie sua senha: ");
         String senha = scanner.nextLine();
+        System.out.println("Confirme sua senha: ");
+        String confirmacaosenha = scanner.nextLine();
+        while(!confirmacaosenha.equals(senha)){
+            System.out.println("As senhas precisam ser iguais. Tente novamente: ");
+            confirmacaosenha = scanner.nextLine();
+        }                
         
-        while(!senha.equals(senha_salva)){
-            System.out.println("Senha incorreta! Tente novamente.");
+        System.out.println("\n===== LOGIN =====");
+        System.out.println("Email ou nome de usuário: ");
+        String emailOuNomeEntrar = scanner.nextLine();
+        System.out.println("Senha: ");
+        senha = scanner.nextLine();
+        
+        while(!senha.equals(confirmacaosenha) || !emailOuNomeEntrar.equals(emailOuNome)){
+            System.out.println("Senha, email ou nome de usuário incorretos! Tente novamente.");
+            System.out.println("\n===== LOGIN =====");
+            System.out.println("Email ou nome de usuário: ");
+            emailOuNomeEntrar = scanner.nextLine();
+            System.out.println("Senha: ");
             senha = scanner.nextLine();
         }        
         System.out.printf("\nBem vindo(a) de volta, %s!\n\n",emailOuNome);
