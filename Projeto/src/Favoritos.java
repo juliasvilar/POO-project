@@ -25,24 +25,5 @@ class Favoritos {
     public List<Livro> getLivrosFavoritos() {
         return livrosFavoritos;
     }
-    
-    
-    public void exibirFilmesFavoritos() {
-        System.out.println("Filmes Favoritos:");
-        for (Filme filme : filmesFavoritos) {
-            filme.exibeFichaTecnica();
-        }
-    }
 
-    public void exibirLivrosFavoritos() {
-        System.out.println("Livros Favoritos:");
-        for (Livro livro : livrosFavoritos) {
-            livro.exibeFichaTecnica();
-        }
-    }
-
-    public void exibirLivrosEFilmesFavoritos(){
-        exibirFilmesFavoritos();
-        exibirLivrosFavoritos();
-    }
 }
