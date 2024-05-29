@@ -8,28 +8,14 @@ public class Principal {
         List<Filme> listaDeFilmes = new ArrayList<>();
         List<Livro> listaDeLivros = new ArrayList<>();
         Favoritos favoritos = new Favoritos();
+        Interface minhaInterface = new Interface();
         int resposta;
         
-        String senha_salva = "123456";
-
-        System.out.println("===== LOGIN =====");
-        System.out.println("Email ou nome de usuário: ");
-        String emailOuNome = scanner.nextLine();
-        System.out.println("Senha: ");
-        String senha = scanner.nextLine();
-        
-        while(!senha.equals(senha_salva)){
-            System.out.println("Senha incorreta! Tente novamente.");
-            senha = scanner.nextLine();
-        }
-
-        
-        System.out.printf("\nBem vindo(a) de volta, %s!\n\n",emailOuNome);
-        
-        Thread.sleep(1500);
-
+        minhaInterface.login();
+                
         do {
-            exibirMenu();
+            Thread.sleep(1500);
+            minhaInterface.exibirMenu();
             System.out.print("Informe a opcao desejada: ");
             resposta = scanner.nextInt();
 
@@ -39,17 +25,14 @@ public class Principal {
                     break;
                                    
                 case 2: 
-                    System.out.println("Lista de filmes:");
-                    for (Filme f : listaDeFilmes) {
-                        f.exibeFichaTecnica();
-                    }
+                    minhaInterface.exibirFilmes(listaDeFilmes);
                     break;                                          
                 
                 case 3: 
                     if (favoritos.getFilmesFavoritos().isEmpty()) {
                         System.out.println("Lista vazia!");
                     } else {
-                        favoritos.exibirFilmesFavoritos();
+                        minhaInterface.exibirFilmesFavoritos(favoritos.getFilmesFavoritos());
                     }
                     break; 
                      
@@ -57,17 +40,14 @@ public class Principal {
                     Livro.adicionarLivro(scanner, listaDeLivros, favoritos);
                     break;                                   
                 case 5: 
-                    System.out.println("Lista de livros:");
-                    for (Livro l : listaDeLivros) {
-                        l.exibeFichaTecnica();
-                    }
+                    minhaInterface.exibirLivros(listaDeLivros);
                     break;
                     
                 case 6: 
                     if (favoritos.getLivrosFavoritos().isEmpty()) {
                         System.out.println("Lista vazia!");
                     } else {
-                        favoritos.exibirLivrosFavoritos();
+                        minhaInterface.exibirLivrosFavoritos(favoritos.getLivrosFavoritos());
                     }
                     break; 
                 case 0: 
@@ -82,19 +62,5 @@ public class Principal {
         } while (resposta != 0);
 
         scanner.close();
-    }
-
-    public static void exibirMenu() {
-        System.out.println("\n===== MENU =====");
-        System.out.println("FILMES");
-        System.out.println("1. Adicionar filme na lista"); 
-        System.out.println("2. Mostrar filmes na lista de filmes"); 
-        System.out.println("3. Mostrar filmes favoritos"); 
-        System.out.println("LIVROS");
-        System.out.println("4. Adicionar livro na lista");
-        System.out.println("5. Mostrar livros na lista de livros"); 
-        System.out.println("6. Mostrar livros favoritos"); 
-        System.out.println("0. Sair");
-        System.out.println("================");
-    }                  
+    }                
 }
