@@ -55,6 +55,10 @@ class Filme {
 
             System.out.print("Digite a nota para o filme '" + filme.getNome() + "': ");
             double notaFilme = scanner.nextDouble();
+            while ( notaFilme > 10 || notaFilme < 0){
+                System.out.println("A nota deve estar entre 0-10. Tente novamente: ");
+                notaFilme = scanner.nextDouble();
+            }
             filme.setNota(notaFilme);
 
             ListaDeFilmes.add(filme);
@@ -70,5 +74,5 @@ class Filme {
 
             }
         }
-    }   
+    }    
 }
