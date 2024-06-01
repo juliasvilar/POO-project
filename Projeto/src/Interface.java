@@ -78,8 +78,9 @@ class Interface {
         System.out.println("6. Mostrar livros na lista de livros"); 
         System.out.println("7. Mostrar livros favoritos");
         System.out.println("8. Remover livro da lista de favoritos");
+        System.out.println("OUTRAS OPCOES");
+        System.out.println("9 - Editar perfil (em desenvolvimento)");
         System.out.println("0. Sair");
         System.out.println("================");
-    }  
-    
+    }     
 }
