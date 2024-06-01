@@ -35,21 +35,29 @@ public class Principal {
                         minhaInterface.exibirFilmesFavoritos(favoritos.getFilmesFavoritos());
                     }
                     break; 
-                     
-                case 4: 
+                
+                case 4:
+                    favoritos.removerFilmeFavorito();
+                    break;
+                case 5: 
                     Livro.adicionarLivro(scanner, listaDeLivros, favoritos);
                     break;                                   
-                case 5: 
+                
+                case 6: 
                     minhaInterface.exibirLivros(listaDeLivros);
                     break;
                     
-                case 6: 
+                case 7: 
                     if (favoritos.getLivrosFavoritos().isEmpty()) {
-                        System.out.println("Lista vazia!");
+                        System.out.println("\nLista vazia!");
                     } else {
                         minhaInterface.exibirLivrosFavoritos(favoritos.getLivrosFavoritos());
                     }
                     break; 
+                   
+                case 8:
+                    System.out.println("Em desenvolvimento...");
+                    break;
                 case 0: 
                     System.out.println("Fechando programa...");
                     break;
