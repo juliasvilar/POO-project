@@ -3,17 +3,21 @@ import java.util.Scanner;
 
 class Interface {
     
+    Perfil perfil = new Perfil();
+    
     public void login(){
         Scanner scanner = new Scanner(System.in);
        
         System.out.println("===== CADASTRO =====");
-        System.out.println("Email ou nome de usuario: ");
-        String emailOuNome = scanner.nextLine();
+        System.out.println("Nome de usuario: ");
+        perfil.nome = scanner.nextLine();
+        System.out.println("Email: ");
+        perfil.email = scanner.nextLine();
         System.out.println("Crie sua senha: ");
-        String senha = scanner.nextLine();
+        perfil.senha = scanner.nextLine();
         System.out.println("Confirme sua senha: ");
         String confirmacaosenha = scanner.nextLine();
-        while(!confirmacaosenha.equals(senha)){
+        while(!confirmacaosenha.equals(perfil.senha)){
             System.out.println("As senhas precisam ser iguais. Tente novamente: ");
             confirmacaosenha = scanner.nextLine();
         }
@@ -23,17 +27,21 @@ class Interface {
         System.out.println("Email ou nome de usuário: ");
         String emailOuNomeEntrar = scanner.nextLine();
         System.out.println("Senha: ");
-        senha = scanner.nextLine();
+        perfil.senha = scanner.nextLine();
         
-        while(!senha.equals(confirmacaosenha) || !emailOuNomeEntrar.equals(emailOuNome)){
+        while(!perfil.senha.equals(confirmacaosenha) || !emailOuNomeEntrar.equals(perfil.nome) || !emailOuNomeEntrar.equals(perfil.email)){
             System.out.println("Senha, email ou nome de usuário incorretos! Tente novamente.");
             System.out.println("\n===== LOGIN =====");
             System.out.println("Email ou nome de usuário: ");
             emailOuNomeEntrar = scanner.nextLine();
             System.out.println("Senha: ");
-            senha = scanner.nextLine();
+            perfil.senha = scanner.nextLine();
+        }
+        if (emailOuNomeEntrar.equals(perfil.email)){
+            System.out.printf("\nBem vindo(a) de volta, %s!\n\n",perfil.email);
+        } else {
+            System.out.printf("\nBem vindo(a) de volta, %s!\n\n",perfil.nome);
         }        
-        System.out.printf("\nBem vindo(a) de volta, %s!\n\n",emailOuNome);
     }
     
     
@@ -82,5 +90,5 @@ class Interface {
         System.out.println("9 - Editar perfil (em desenvolvimento)");
         System.out.println("0. Sair");
         System.out.println("================");
-    }     
+    }
 }
