@@ -55,6 +55,10 @@ class Livro {
 
             System.out.print("Digite a nota para o livro '" + livro.getNome() + "': ");
             double notaLivro = scanner.nextDouble();
+            while ( notaLivro > 10 || notaLivro < 0){
+                System.out.println("A nota deve estar entre 0-10. Tente novamente: ");
+                notaLivro = scanner.nextDouble();
+            }
             livro.setNota(notaLivro);
 
             ListaDeLivros.add(livro);
