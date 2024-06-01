@@ -56,7 +56,7 @@ public class Principal {
                     break; 
                    
                 case 8:
-                    System.out.println("Em desenvolvimento...");
+                    favoritos.removerLivroFavorito();
                     break;
                 case 0: 
                     System.out.println("Fechando programa...");
