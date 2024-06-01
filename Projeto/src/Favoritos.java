@@ -48,4 +48,25 @@ class Favoritos {
             System.out.println("Filme nao favoritado.\n");
         }
     }
+    
+    public void removerLivroFavorito() {
+        if (getLivrosFavoritos().isEmpty()) {
+            System.out.println("Lista vazia!");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Que livro você deseja remover da lista de favoritos? ");
+            String livro = scanner.nextLine();
+
+            for(int i = 0; i < livrosFavoritos.size(); i++){
+                Livro p = livrosFavoritos.get(i);
+
+                if(p.getNome().equals(livro)){
+                    livrosFavoritos.remove(p);
+                    System.out.println("Livro removido da lista de favoritos!");
+                    return;
+                }
+            }
+            System.out.println("Livro nao favoritado.\n");
+        }
+    }
 }
