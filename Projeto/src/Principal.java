@@ -9,6 +9,7 @@ public class Principal {
         List<Livro> listaDeLivros = new ArrayList<>();
         Favoritos favoritos = new Favoritos();
         Interface minhaInterface = new Interface();
+        Perfil perfil = new Perfil();
         int resposta;
         
         minhaInterface.login();
@@ -57,6 +58,9 @@ public class Principal {
                    
                 case 8:
                     favoritos.removerLivroFavorito();
+                    break;
+                case 9:
+                    perfil.edicao();
                     break;
                 case 0: 
                     System.out.println("Fechando programa...");
