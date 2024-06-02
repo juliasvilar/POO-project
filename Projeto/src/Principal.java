@@ -12,6 +12,7 @@ public class Principal {
         Perfil perfil = new Perfil();
         int resposta;
         
+        minhaInterface.cadastro();
         minhaInterface.login();
                 
         do {
@@ -62,8 +63,15 @@ public class Principal {
                 case 9:
                     perfil.edicao();
                     break;
+                case 10:
+                    minhaInterface.mostrarPerfil();
+                    break;
+                case 11:
+                    System.out.println("\nAte mais!");
+                    minhaInterface.login();
+                    break; 
                 case 0: 
-                    System.out.println("Fechando programa...");
+                    System.out.println("\nFechando programa...");
                     break;
 
                 default: 
