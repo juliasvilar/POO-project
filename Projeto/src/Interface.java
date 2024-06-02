@@ -29,7 +29,7 @@ class Interface {
         System.out.println("Senha: ");
         perfil.senha = scanner.nextLine();
         
-        while(!perfil.senha.equals(confirmacaosenha) || !emailOuNomeEntrar.equals(perfil.nome) || !emailOuNomeEntrar.equals(perfil.email)){
+        while(!perfil.senha.equals(confirmacaosenha) || (!emailOuNomeEntrar.equals(perfil.nome) && !emailOuNomeEntrar.equals(perfil.email))){
             System.out.println("Senha, email ou nome de usuário incorretos! Tente novamente.");
             System.out.println("\n===== LOGIN =====");
             System.out.println("Email ou nome de usuário: ");
