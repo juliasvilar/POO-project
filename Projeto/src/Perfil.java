@@ -13,16 +13,19 @@ class Perfil {
         int resposta;
         
         resposta = scanner.nextInt();
+        scanner.nextLine();
+        
         while(resposta < 1 || resposta > 3){
             System.out.println("Escolha invalida. Tente de novo: ");
             resposta = scanner.nextInt();
+            scanner.nextLine();
         }
         
         if (resposta == 1){
             String emailAntigo = email;
             System.out.println("Qual será o seu novo email? ");
             email = scanner.nextLine();
-            while (emailAntigo.equals(email)){
+            while (emailAntigo.equals(email) || email.isEmpty()){
                 System.out.println("Escolha um email diferente do atual: ");
                 email = scanner.nextLine();
             }
@@ -32,7 +35,7 @@ class Perfil {
             String nomeAntigo = nome;
             System.out.println("Qual será o seu novo nome de usuario? ");
             nome = scanner.nextLine();
-            while (nomeAntigo.equals(nome)){
+            while (nomeAntigo.equals(nome) || nome.isEmpty()){
                 System.out.println("Escolha um nome de usuario diferente do atual: ");
                 nome = scanner.nextLine();
             }
@@ -42,7 +45,7 @@ class Perfil {
             String senhaAntiga = senha;
             System.out.println("Qual será a sua nova senha? ");
             senha = scanner.nextLine();
-            while (senhaAntiga.equals(senha)){
+            while (senhaAntiga.equals(senha)|| senha.isEmpty()){
                 System.out.println("Escolha uma senha diferente da atual: ");
                 senha = scanner.nextLine();
             }
