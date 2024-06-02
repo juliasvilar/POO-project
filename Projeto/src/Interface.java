@@ -4,8 +4,9 @@ import java.util.Scanner;
 class Interface {
     
     Perfil perfil = new Perfil();
+    String confirmacaosenha;
     
-    public void login(){
+    public void cadastro(){
         Scanner scanner = new Scanner(System.in);
        
         System.out.println("===== CADASTRO =====");
@@ -16,21 +17,26 @@ class Interface {
         System.out.println("Crie sua senha: ");
         perfil.senha = scanner.nextLine();
         System.out.println("Confirme sua senha: ");
-        String confirmacaosenha = scanner.nextLine();
+        confirmacaosenha = scanner.nextLine();
         while(!confirmacaosenha.equals(perfil.senha)){
             System.out.println("As senhas precisam ser iguais. Tente novamente: ");
             confirmacaosenha = scanner.nextLine();
         }
         System.out.println("\nUsuario cadastrado com sucesso!");
+    }
+    
+    public void login() throws InterruptedException{
+        Thread.sleep(1000);
+        Scanner scanner = new Scanner(System.in);
         
         System.out.println("\n===== LOGIN =====");
-        System.out.println("Email ou nome de usuário: ");
+        System.out.println("Email ou nome de usuario: ");
         String emailOuNomeEntrar = scanner.nextLine();
         System.out.println("Senha: ");
         perfil.senha = scanner.nextLine();
         
         while(!perfil.senha.equals(confirmacaosenha) || (!emailOuNomeEntrar.equals(perfil.nome) && !emailOuNomeEntrar.equals(perfil.email))){
-            System.out.println("Senha, email ou nome de usuário incorretos! Tente novamente.");
+            System.out.println("Senha, email ou nome de usuario incorretos! Tente novamente.");
             System.out.println("\n===== LOGIN =====");
             System.out.println("Email ou nome de usuário: ");
             emailOuNomeEntrar = scanner.nextLine();
@@ -87,8 +93,14 @@ class Interface {
         System.out.println("7. Mostrar livros favoritos");
         System.out.println("8. Remover livro da lista de favoritos");
         System.out.println("OUTRAS OPCOES");
-        System.out.println("9 - Editar perfil (em desenvolvimento)");
-        System.out.println("0. Sair");
+        System.out.println("9 - Editar perfil");
+        System.out.println("10 - Visualizar perfil");
+        System.out.println("11 - Deslogar");
+        System.out.println("0. Fechar programa");
         System.out.println("================");
+    }
+    
+    public void mostrarPerfil(){
+        System.out.printf("\nNome de usuario: %s\nEmail: %s\n ",perfil.nome,perfil.email);
     }
 }
