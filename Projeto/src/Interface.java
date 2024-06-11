@@ -44,9 +44,9 @@ class Interface {
             perfil.senha = scanner.nextLine();
         }
         if (emailOuNomeEntrar.equals(perfil.email)){
-            System.out.printf("\nBem vindo(a) de volta, %s!\n\n",perfil.email);
+            System.out.printf("\nBem vindo(a), %s!\n\n",perfil.email);
         } else {
-            System.out.printf("\nBem vindo(a) de volta, %s!\n\n",perfil.nome);
+            System.out.printf("\nBem vindo(a), %s!\n\n",perfil.nome);
         }        
     }
     
