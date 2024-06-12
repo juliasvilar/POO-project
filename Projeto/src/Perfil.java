@@ -22,33 +22,36 @@ class Perfil {
         }
         
         if (resposta == 1){
-            String emailAntigo = email;
+            String novoEmail;
             System.out.println("Qual será o seu novo email? ");
-            email = scanner.nextLine();
-            while (emailAntigo.equals(email) || email.isEmpty()){
+            novoEmail = scanner.nextLine();
+            while (novoEmail.equals(email) || novoEmail.isEmpty()){
                 System.out.println("Escolha um email diferente do atual: ");
-                email = scanner.nextLine();
+                novoEmail = scanner.nextLine();
             }
+            email = novoEmail;
             System.out.println("Email alterado com sucesso!\n");
         
         } else if (resposta == 2){
-            String nomeAntigo = nome;
+            String novoNome;
             System.out.println("Qual será o seu novo nome de usuario? ");
-            nome = scanner.nextLine();
-            while (nomeAntigo.equals(nome) || nome.isEmpty()){
+            novoNome = scanner.nextLine();
+            while (novoNome.equals(nome) || novoNome.isEmpty()){
                 System.out.println("Escolha um nome de usuario diferente do atual: ");
-                nome = scanner.nextLine();
+                novoNome = scanner.nextLine();
             }
+            nome = novoNome;
             System.out.println("Nome de usuario alterado com sucesso!\n");
         
         } else {
-            String senhaAntiga = senha;
+            String novaSenha;
             System.out.println("Qual será a sua nova senha? ");
-            senha = scanner.nextLine();
-            while (senhaAntiga.equals(senha)|| senha.isEmpty()){
+            novaSenha = scanner.nextLine();
+            while (novaSenha.equals(senha)|| novaSenha.isEmpty()){
                 System.out.println("Escolha uma senha diferente da atual: ");
                 senha = scanner.nextLine();
             }
+            senha = novaSenha;
             System.out.println("Senha alterada com sucesso!\n");
         }        
     }
