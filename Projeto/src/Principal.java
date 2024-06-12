@@ -8,8 +8,9 @@ public class Principal {
         List<Filme> listaDeFilmes = new ArrayList<>();
         List<Livro> listaDeLivros = new ArrayList<>();
         Favoritos favoritos = new Favoritos();
-        Interface minhaInterface = new Interface();
         Perfil perfil = new Perfil();
+        Interface minhaInterface = new Interface(perfil);
+                
         int resposta;
         
         minhaInterface.cadastro();
